@@ -29,7 +29,6 @@ const fallbackLayouts = {
 const fallbackDefaultExports = {
   'src/pages/{docs,components}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
   'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
-  'src/pages/showcase/**/*': ['@/layouts/ShowcaseLayout', 'ShowcaseLayout'],
 }
 
 const fallbackGetStaticProps = {
