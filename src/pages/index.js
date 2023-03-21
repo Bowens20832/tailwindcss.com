@@ -3,7 +3,6 @@ import { DarkMode } from '@/components/home/DarkMode'
 import { ConstraintBased } from '@/components/home/ConstraintBased'
 import { BuildAnything } from '@/components/home/BuildAnything'
 import { Performance } from '@/components/home/Performance'
-import { MobileFirst } from '@/components/home/MobileFirst'
 import { StateVariants } from '@/components/home/StateVariants'
 import { ComponentDriven } from '@/components/home/ComponentDriven'
 import { Customization } from '@/components/home/Customization'
@@ -206,7 +205,6 @@ export default function Home() {
         <ConstraintBased />
         <BuildAnything />
         <Performance />
-        <MobileFirst />
         <StateVariants />
         <ComponentDriven />
         <DarkMode />

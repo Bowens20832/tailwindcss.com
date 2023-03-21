@@ -8,46 +8,6 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { ThemeSelect, ThemeToggle } from './ThemeToggle'
 
-function Featured() {
-  return (
-    <Link href="/blog/tailwindcss-v3-2">
-      <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-400/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20">
-        <strong className="font-semibold">Tailwind CSS v3.2</strong>
-        <svg
-          width="2"
-          height="2"
-          fill="currentColor"
-          aria-hidden="true"
-          className="ml-2 text-sky-600 dark:text-sky-400/70"
-        >
-          <circle cx="1" cy="1" r="1" />
-        </svg>
-        <span className="ml-2 min-[1372px]:hidden">
-          Dynamic breakpoints, container queries, and more
-        </span>
-        <span className="ml-2 hidden min-[1372px]:inline">
-          Dynamic breakpoints, multi-config, container queries, and more
-        </span>
-        <svg
-          width="3"
-          height="6"
-          className="ml-3 overflow-visible text-sky-300 dark:text-sky-400"
-          aria-hidden="true"
-        >
-          <path
-            d="M0 0L3 3L0 6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </a>
-    </Link>
-  )
-}
-
 export function NavPopover({ display = 'md:hidden', className, ...props }) {
   let [isOpen, setIsOpen] = useState(false)
 
@@ -133,26 +93,8 @@ export function NavItems() {
         </Link>
       </li>
       <li>
-        <a
-          href="https://tailwindui.com/?ref=top"
-          className="hover:text-sky-500 dark:hover:text-sky-400"
-        >
-          Components
-        </a>
-      </li>
-      <li>
         <Link href="/blog">
           <a className="hover:text-sky-500 dark:hover:text-sky-400">Blog</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/showcase">
-          <a className="hover:text-sky-500 dark:hover:text-sky-400">
-            Showcase
-            <span className="ml-2 font-medium text-xs leading-5 rounded-full text-sky-600 bg-sky-400/10 px-2 py-0.5  dark:text-sky-400">
-              New
-            </span>
-          </a>
         </Link>
       </li>
     </>
@@ -234,7 +176,6 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                 </a>
               </Link>
               <VersionSwitcher />
-              <Featured />
               <div className="relative hidden lg:flex items-center ml-auto">
                 <nav className="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
                   <ul className="flex space-x-8">

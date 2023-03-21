@@ -34,7 +34,7 @@ Router.events.on('routeChangeComplete', () => progress.finish())
 Router.events.on('routeChangeError', () => progress.finish())
 
 export default function App({ Component, pageProps, router }) {
-  let [navIsOpen, setNavIsOpen] = useState(false)
+  let [navIsOpen, setNavIsOpen] = useState(false);
 
   useEffect(() => {
     if (!navIsOpen) return
