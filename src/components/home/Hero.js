@@ -8,34 +8,11 @@ import { debounce } from 'debounce'
 import { useMedia } from '@/hooks/useMedia'
 import { wait } from '@/utils/wait'
 import { createInViewPromise } from '@/utils/createInViewPromise'
-import { tokens, code } from '../../samples/hero.html?highlight'
 import colors from 'tailwindcss/colors'
 
 const CHAR_DELAY = 75
 const GROUP_DELAY = 1000
 const TRANSITION = { duration: 0.5 }
-
-function getRange(text, options = {}) {
-  return { start: code.indexOf(text), end: code.indexOf(text) + text.length, ...options }
-}
-
-const ranges = [
-  getRange(' p-8'),
-  getRange(' rounded-full'),
-  getRange(' mx-auto'),
-  getRange(' font-medium'),
-  getRange(' class="font-medium"'),
-  getRange(' class="text-sky-500 dark:text-sky-400"'),
-  getRange(' class="text-slate-700 dark:text-slate-500"'),
-  getRange(' text-center'),
-  getRange('md:flex '),
-  getRange(' md:p-0'),
-  getRange(' md:p-8', { immediate: true }),
-  getRange(' md:rounded-none'),
-  getRange(' md:w-48'),
-  getRange(' md:h-auto'),
-  getRange(' md:text-left'),
-]
 
 function getRangeIndex(index, ranges) {
   for (let i = 0; i < ranges.length; i++) {
@@ -76,57 +53,6 @@ function Words({ children, bolder = false, layout, transition }) {
   ))
 }
 
-function augment(tokens, index = 0) {
-  for (let i = 0; i < tokens.length; i++) {
-    if (Array.isArray(tokens[i])) {
-      const _type = tokens[i][0]
-      const children = tokens[i][1]
-      if (Array.isArray(children)) {
-        index = augment(children, index)
-      } else {
-        const str = children
-        const result = []
-        for (let j = 0; j < str.length; j++) {
-          const [rangeIndex, indexInRange, isLast] = getRangeIndex(index, ranges)
-          if (rangeIndex > -1) {
-            result.push([`char:${rangeIndex}:${indexInRange}${isLast ? ':last' : ''}`, str[j]])
-          } else {
-            if (typeof result[result.length - 1] === 'string') {
-              result[result.length - 1] += str[j]
-            } else {
-              result.push(str[j])
-            }
-          }
-          index++
-        }
-        if (!(result.length === 1 && typeof result[0] === 'string')) {
-          tokens[i].splice(1, 1, result)
-        }
-      }
-    } else {
-      const str = tokens[i]
-      const result = []
-      for (let j = 0; j < str.length; j++) {
-        const [rangeIndex, indexInRange, isLast] = getRangeIndex(index, ranges)
-        if (rangeIndex > -1) {
-          result.push([`char:${rangeIndex}:${indexInRange}${isLast ? ':last' : ''}`, str[j]])
-        } else {
-          if (typeof result[result.length - 1] === 'string') {
-            result[result.length - 1] += str[j]
-          } else {
-            result.push(str[j])
-          }
-        }
-        index++
-      }
-      tokens.splice(i, 1, ...result)
-      i += result.length - 1
-    }
-  }
-  return index
-}
-
-augment(tokens)
 
 export function Hero() {
   const containerRef = useRef()
@@ -387,43 +313,7 @@ export function Hero() {
       }
       right={
         <CodeWindow className="!h-auto max-h-[none]">
-          <CodeWindow.Code
-            ref={inViewRef}
-            tokens={tokens}
-            tokenComponent={HeroToken}
-            tokenProps={{
-              currentGroup: state.group,
-              currentChar: state.char,
-              onCharComplete(charIndex) {
-                if (!mounted.current) return
-                setState((state) => ({ ...state, char: charIndex + 1 }))
-              },
-              async onGroupComplete(groupIndex) {
-                if (!mounted.current) return
-                setStep(groupIndex)
-
-                if (groupIndex === 7) {
-                  if (!supportsMd) return
-                  await cursorControls.start({ opacity: 0.5, transition: { delay: 1 } })
-                  if (!mounted.current) return
-                  setWide(true)
-                  setIsMd(true)
-                  await cursorControls.start({ opacity: 0, transition: { delay: 0.5 } })
-                }
-
-                if (!mounted.current) return
-
-                if (ranges[groupIndex + 1] && ranges[groupIndex + 1].immediate) {
-                  setState({ char: 0, group: groupIndex + 1 })
-                } else {
-                  window.setTimeout(() => {
-                    if (!mounted.current) return
-                    setState({ char: 0, group: groupIndex + 1 })
-                  }, GROUP_DELAY)
-                }
-              },
-            }}
-          />
+          
         </CodeWindow>
       }
     />
