@@ -77,9 +77,6 @@
     "zustand": "^4.0.0-rc.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.21.0",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -92,9 +89,6 @@
     "@types/react": "^18.0.28",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
-    "babel-eslint": "10.x",
-    "babel-jest": "^29.5.0",
-    "babel-loader": "^8.3.0",
     "eslint": "^8.36.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "4.x",
