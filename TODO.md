@@ -2,12 +2,13 @@
 
 - remove any references to TW
 
+- add e2e test that verify's the index, docs, and blog pages load
+
 - get jest testing working
 
 
 - Remove useless code
 
-- add e2e test that verify's the index, docs, and blog pages load
 
 
 - Upgrade eslint and all other packages to their latest
