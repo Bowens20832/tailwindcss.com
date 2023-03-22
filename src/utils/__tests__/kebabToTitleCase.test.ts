@@ -1,4 +1,4 @@
-import textToKebabCase from "../../utils/textToKebabCase";
+import textToKebabCase from "../textToKebabCase";
 
 describe('Kebab To Title Case', () => {
     it('changes a string to kebab case',() => {
@@ -9,4 +9,4 @@ describe('Kebab To Title Case', () => {
       result = textToKebabCase("hello world, this is a big big sentence.");
       expect(result).toBe("Hello World, This Is A Big Big Sentence.");
     });
-  })
+});

@@ -6,4 +6,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  nextRouter: {
+    query: {
+      foo: 'this-is-a-global-override',
+    },
+  },
 }

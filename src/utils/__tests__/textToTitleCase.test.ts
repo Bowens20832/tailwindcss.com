@@ -9,4 +9,4 @@ describe('Text To Title Case', () => {
       result = textToTitleCase("HEY NOW, THIS IS COOL");
       expect(result).toBe("HEY NOW, THIS IS COOL");
     });
-  })
+});

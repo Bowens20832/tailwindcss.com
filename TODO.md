@@ -1,3 +1,9 @@
+- add links to the footer.. Add env vars for the values
+
+- add built with elegant and a link in docs footer like in docusaurus
+
+- make the trademark page dynamic with env variables
+
 - find more content to swap out for env variables
 
 - remove any references to TW
