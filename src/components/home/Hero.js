@@ -6,8 +6,6 @@ import clsx from 'clsx'
 import { fit } from '@/utils/fit'
 import { debounce } from 'debounce'
 import { useMedia } from '@/hooks/useMedia'
-import { wait } from '@/utils/wait'
-import { createInViewPromise } from '@/utils/createInViewPromise'
 import colors from 'tailwindcss/colors'
 
 const CHAR_DELAY = 75
@@ -73,44 +71,6 @@ export function Hero() {
 
   useEffect(() => {
     return () => (mounted.current = false)
-  }, [])
-
-  useEffect(() => {
-    let current = true
-
-    const { promise: inViewPromise, disconnect } = createInViewPromise(inViewRef.current, {
-      threshold: 0.5,
-    })
-
-    const promises = [
-      wait(1000),
-      inViewPromise,
-      new Promise((resolve) => {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(resolve)
-        } else {
-          window.setTimeout(resolve, 0)
-        }
-      }),
-      new Promise((resolve) => {
-        if (imageRef.current.complete) {
-          resolve()
-        } else {
-          imageRef.current.addEventListener('load', resolve)
-        }
-      }),
-    ]
-
-    Promise.all(promises).then(() => {
-      if (current) {
-        setState({ group: 0, char: 0 })
-      }
-    })
-
-    return () => {
-      current = false
-      disconnect()
-    }
   }, [])
 
   useEffect(() => {
