@@ -48,7 +48,7 @@ export function DocsFooter({ children, previous, next }) {
           )}
         </div>
       )}
-      <div className="pt-10 pb-28 border-t border-slate-200 sm:flex justify-between text-slate-500 dark:border-slate-200/5">
+      <div className="py-11 border-y border-slate-200 sm:flex justify-between text-slate-500 dark:border-slate-200/5">
         <div className="mb-6 sm:mb-0 sm:flex">
           <p>Copyright &copy; {new Date().getFullYear()} Elegant Framework Inc.</p>
           <p className="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200 dark:sm:border-slate-200/5">
@@ -57,9 +57,7 @@ export function DocsFooter({ children, previous, next }) {
             </Link>
           </p>
         </div>
-        {children ? (
-          children
-        ) : (
+        {children ? (children) : (
           <div className="flex space-x-10 text-slate-400 dark:text-slate-500">
             <a
               href="https://github.com/tailwindlabs/tailwindcss"
@@ -83,6 +81,14 @@ export function DocsFooter({ children, previous, next }) {
             </a>
           </div>
         )}
+      </div>
+      <div className='pt-8 pb-10 text-center text-slate-500 dark:border-slate-200/5'>
+        Built with <a href='http://elegantframework.com/' 
+                      aria-label='Built with the Elegant Framework'
+                      className='font-semibold hover:text-sky-500 dark:hover:text-sky-400'
+                    >
+                      Elegant
+                    </a>.
       </div>
     </footer>
   )

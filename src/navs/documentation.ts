@@ -7,12 +7,13 @@ const pages = createPageList(
 );
 
 export const documentationNav = {
+  'Prologue': [
+    pages['release-notes'],
+    pages['contribution-guide']
+  ],
   'Getting Started': [
-    {
-      title: 'Installation',
-      href: '/docs/installation',
-      match: /^\/docs\/(installation|guides)/,
-    },
+    pages['installation'],
     pages['configuration'],
+    pages['new-documents']
   ],
 }
