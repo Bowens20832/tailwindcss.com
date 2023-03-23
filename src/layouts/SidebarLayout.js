@@ -30,16 +30,13 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
 
 /**
  * Find the nearst scrollable ancestor (or self if scrollable)
- *
  * Code adapted and simplified from the smoothscroll polyfill
- *
- *
  * @param {Element} el
  */
 function nearestScrollableContainer(el) {
   /**
    * indicates if an element can be scrolled
-   *
+
    * @param {Node} el
    */
   function isScrollable(el) {
@@ -100,7 +97,7 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
       <div className="sticky top-0 -ml-0.5 pointer-events-none">
         {!mobile && <div className="h-10 bg-white dark:bg-slate-900" />}
         <div className="bg-white dark:bg-slate-900 relative pointer-events-auto">
-          <SearchButton className="hidden w-full lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700">
+          {/* <SearchButton className="hidden w-full lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700">
             {({ actionKey }) => (
               <>
                 <svg
@@ -135,7 +132,7 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
                 )}
               </>
             )}
-          </SearchButton>
+          </SearchButton> */}
         </div>
         {!mobile && <div className="h-8 bg-gradient-to-b from-white dark:from-slate-900" />}
       </div>

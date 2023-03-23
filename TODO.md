@@ -1,17 +1,21 @@
 ~~~~~~> To Launch 1.2
 
-- Disable algolia search for launch
+- Disable algolia search for launch ... from mobile
 
-- Disable blog email signup for launch
+- Disable blog email signup for launch .. check mobile
 
 - get a logo
 
 - disable versioning
 
+- check mobile design.. Make sure everything is working
+
 - write 2 blogs posts.. One documenting the first docusauras launch.. announcing with a screenshot before migration to 1.2
     - 2nd blog post announces 1.2
 
 - create a splash landing page
+
+- update build-rss.js
 
 ~~~~~~> Post launch
 
@@ -61,3 +65,17 @@ POST Features to add and blog how to's
 - Next blogging with comments
 - Terms of service template
 - Privacy Policy template for GDPR
+
+
+
+IH Feedback -
+
+    - add mailchimp connection
+    - checkout ghost blogging - Open source, has a bunch of neat features
+    - tina could provide a cms ui admin panel for us
+    - research hugo and astro for docs
+    - research hashnode
+    - research https://versoly.com/ more... Maybe we can link up?
+    - checkout buffer to schedule social media posts
+
+Dang feedback - Landing page isn't clear to users what our product is

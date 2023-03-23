@@ -6,7 +6,7 @@ import { getAllPosts } from '@/utils/getAllPosts'
 import { mdxComponents } from '@/utils/mdxComponents'
 
 export default function buildRss() {
-  const baseUrl = 'https://tailwindcss.com'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
   const blogUrl = `${baseUrl}/blog`
 
   const feed = new Feed({

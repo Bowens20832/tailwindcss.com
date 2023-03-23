@@ -103,7 +103,7 @@ export function BlogPostLayout({ children, meta }) {
                 width="1429"
                 decoding="async"
               />
-              <section className="relative py-16 border-t border-slate-200 dark:border-slate-200/5">
+              {/* <section className="relative py-16 border-t border-slate-200 dark:border-slate-200/5">
                 <h2 className="text-xl font-semibold text-slate-900 tracking-tight dark:text-white">
                   Get all of our updates directly to your&nbsp;inbox.
                   <br />
@@ -111,6 +111,16 @@ export function BlogPostLayout({ children, meta }) {
                 </h2>
                 <div className="mt-5 max-w-md">
                   <NewsletterForm action="https://app.convertkit.com/forms/3181881/subscriptions" />
+                </div>
+              </section> */}
+              <section className="relative py-16 border-t border-slate-200 dark:border-slate-200/5">
+                <div className='pt-8 pb-10 text-center text-slate-500 dark:border-slate-200/5'>
+                  Built with <a href='http://elegantframework.com/' 
+                      aria-label='Built with the Elegant Framework'
+                      className='font-semibold hover:text-sky-500 dark:hover:text-sky-400'
+                    >
+                      Elegant
+                    </a>.
                 </div>
               </section>
             </div>
