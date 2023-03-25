@@ -173,7 +173,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   }}
                 >
                   <span className="sr-only">{process.env.NEXT_PUBLIC_APP_NAME} home page</span>
-                  <Logo className="w-auto h-5" />
+                  <Logo className="w-auto h-7" />
                 </a>
               </Link>
               <VersionSwitcher />
