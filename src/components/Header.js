@@ -172,7 +172,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                     Router.push('/brand')
                   }}
                 >
-                  <span className="sr-only">Tailwind CSS home page</span>
+                  <span className="sr-only">{process.env.NEXT_PUBLIC_APP_NAME} home page</span>
                   <Logo className="w-auto h-5" />
                 </a>
               </Link>
@@ -202,7 +202,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   </a>
                 </div>
               </div>
-              <SearchButton className="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300">
+              {/* <SearchButton className="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300">
                 <span className="sr-only">Search</span>
                 <svg
                   width="24"
@@ -217,8 +217,8 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   <path d="m19 19-3.5-3.5" />
                   <circle cx="11" cy="11" r="6" />
                 </svg>
-              </SearchButton>
-              <NavPopover className="ml-2 -my-1" display="lg:hidden" />
+              </SearchButton> */}
+              <NavPopover className="ml-auto -my-1" display="lg:hidden" />
             </div>
           </div>
           {hasNav && (

@@ -4,7 +4,7 @@ import { Logo } from '@/components/Logo'
 const footerNav = [
   {
     Community: [
-      { title: 'GitHub', href: 'https://github.com/tailwindlabs/tailwindcss' },
+      { title: 'GitHub', href: process.env.NEXT_PUBLIC_APP_REPOSITORY },
       { title: 'Discord', href: '/discord' },
       { title: 'Twitter', href: 'https://twitter.com/tailwindcss' },
       { title: 'YouTube', href: 'https://www.youtube.com/tailwindlabs' },
@@ -28,8 +28,8 @@ export function Footer() {
                   <ul className="mt-3 space-y-2">
                     {items.map((item) => (
                       <li key={item.href}>
-                        <Link href={item.href}>
-                          <a className="hover:text-slate-900 dark:hover:text-slate-300">
+                        <Link href={item.href} passHref>
+                          <a className="hover:text-slate-900 dark:hover:text-slate-300" target="_blank" rel="noopener noreferrer">
                             {item.title}
                           </a>
                         </Link>

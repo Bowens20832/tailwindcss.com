@@ -1,10 +1,27 @@
 ~~~~~~> To Launch 1.2
 
-- Disable algolia search for launch ... from mobile
+- Disable algolia search for launch ... from mobile on home page
 
 - Disable blog email signup for launch .. check mobile
 
+- disable brand policy page for now .. Add built with elegant in it's place
+
 - get a logo
+    - light mini logo -
+    - dark mini logo -
+    - light full logo -
+    - dark full logo -
+    - social card - 2560w x 1280h
+
+    favicons
+        - android-chrome 192 and 256px - light
+        - apple touch - light 
+        - browerconfig.xml
+        - favicon - 16 and 32
+        - favicon.ico
+        mstile- 150x150 png
+        safari-pinned-tab.svg
+        site.webmanifest
 
 - disable versioning
 
@@ -18,6 +35,8 @@
 - update build-rss.js
 
 ~~~~~~> Post launch
+
+- add back the brand policy generator page
 
 - Reenable algolia search.. Write a doc on how to use algolia with elegant
 
@@ -65,6 +84,7 @@ POST Features to add and blog how to's
 - Next blogging with comments
 - Terms of service template
 - Privacy Policy template for GDPR
+- Blog comments from the next demo repos
 
 
 
